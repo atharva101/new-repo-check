@@ -32,8 +32,8 @@ app.use(cors())
 app.use(bodyParser.json())
 
 const razorpay = new Razorpay({
-	key_id: 'rzp_test_H0teHdXhlYCfKK',
-	key_secret: 'fDcH4jrTo1en4o5VwMMqGngd'
+	key_id: 'rzp_live_IAW7Yh1zAJk9XQ',
+	key_secret: 'SZTc8vglNLNP9zw7Twe26VlI'
 })
 
 app.get('/logo.svg', (req, res) => {
@@ -90,7 +90,7 @@ app.post('/razorpay', async (req, res) => {
 	}
 })
 
-app.listen(3000, () => {
+app.listen(process.env.port, () => {
 	console.log('Listening on 1337')
 	
 })
